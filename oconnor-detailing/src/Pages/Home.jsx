@@ -18,7 +18,7 @@ const Home = () => {
       <section className="about">
         <h2>About Us</h2>
         <p>
-          At <strong>[O'Connor Detailing]</strong>, we’re passionate about bringing that <em>like-new</em> feeling back to your vehicle.
+          At <strong>O'Connor Detailing</strong>, we’re passionate about bringing that <em>like-new</em> feeling back to your vehicle.
           Born from a love for cars and a commitment to quality, we provide professional detailing services
           at a lower price. Whether you need a quick refresh or a deep clean inside and out, we’ve got you covered.
         </p>

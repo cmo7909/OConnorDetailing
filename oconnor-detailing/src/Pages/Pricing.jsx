@@ -23,8 +23,8 @@ const packages = [
     },
     {
         name: 'Gold',
-        interiorPrice: 80,
-        exteriorPrice: 100,
+        interiorPrice: 100,
+        exteriorPrice: 120,
         interiorItems: [
             "Vacuum Carpets and Seats",
             "Steam cleaned cloth seats",
