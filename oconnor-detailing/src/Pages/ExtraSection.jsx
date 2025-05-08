@@ -7,7 +7,7 @@ const extras = ["Spot/Scratch Polishing: +$60",
 
 const ExtrasSection = () => (
     <div className="extras-section">
-        <h2>Extras</h2>
+        <h2>Extras:</h2>
         <ul>
             {extras.map((extra, i) => <li key={i}>{extra}</li>)}
         </ul>

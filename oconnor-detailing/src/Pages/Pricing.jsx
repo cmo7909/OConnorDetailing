@@ -68,7 +68,7 @@ const packages = [
 
 const Pricing = () => (
     <div className="pricing-page">
-        <h1>Our Packages</h1>
+        <h1>Detailing Packages</h1>
         <div className="package-list">
             {packages.map(pkg=> (
               <PackageCard key={pkg.name} {...pkg}></PackageCard>  

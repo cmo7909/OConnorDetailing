@@ -5,6 +5,7 @@ import Home from './Pages/Home';
 import Pricing from './Pages/Pricing';
 import Gallery from './Pages/Gallery';
 import Contact from './Pages/Contact';
+import './Components/theme.css';
 
 function App() {
   return (
