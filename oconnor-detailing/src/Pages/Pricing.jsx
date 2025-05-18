@@ -8,17 +8,18 @@ const packages = [
         interiorPrice: 80,
         exteriorPrice: 100,
         interiorItems: [
-            "Vacuum Carpets and Seats (leather seats cleaned)",
-            "Wipe down + Dress doors, center console, and dash",
+            "Vacuum Carpets", 
+            "Vacuum Seats (leather seats cleaned)",
+            "All Surfaces Wiped Down",
             "Door Jambs Cleaned",
-            "Windows + mirrors cleaned"
+            "Windows + Mirrors Cleaned"
         ],
         exteriorItems: [
            "Hand wash",
             "Claybar Mitt",
             "Hydro O2 Hydrophobic Spray",
-            "Wheels dressed",
-            "Plastic trim dressed" 
+            "Wheels Dressed",
+            "Plastic Trim Dressed and Protected" 
         ]
     },
     {
@@ -27,19 +28,21 @@ const packages = [
         exteriorPrice: 120,
         interiorItems: [
             "Vacuum Carpets and Seats",
-            "Steam cleaned cloth seats",
-            "Leather seats cleaned and conditioned",
-            "Air Dusting the entire vehicle",
-            "Steam cleaned carpets and mats",
+            "Steam Cleaned Cloth Seats",
+            "Leather Seats Cleaned and Conditioned",
+            "Air Dusting the Entire Vehicle",
+            "All Surfaces Wiped Down",
+            "Steam Cleaned Carpets and Mats",
             "Door Jambs Cleaned",
-            "Windows + mirrors cleaned"
+            "Windows + Mirrors Cleaned"
         ],
         exteriorItems: [
            "Hand wash",
             "Claybar mitt",
-            "Butter wax or Hydro O2 Hydrophobic spray",
-            "Wheels dressed + ceramic spray",
-            "Plastic trim dressed"
+            "Butter Wax or Hydro O2 Hydrophobic spray",
+            "Wheels Dressed",
+            "Wheel Ceramic Spray",
+            "Plastic Trim Dressed and Protected (With Ceramic Spray)"
         ]  
     },
     {
@@ -48,20 +51,22 @@ const packages = [
         exteriorPrice: 150,
         interiorItems: [
             "Vacuum carpets and Seats",
-            "Cloth Seat and Carpet Extraction",
+            "Cloth Seat and/or Carpet Extraction",
             "Leather seats cleaned and conditioned",
             "Air dusting the entire vehicle",
+            "All Surfaces Wiped Down",
             "Door jambs cleaned",
             "Windows + mirrors cleaned",
             "Clean the Spare jack and accessories"
         ],
         exteriorItems: [
            "Hand Wash",
-            "Clay bar",
-            "Undercarriage spray clean",
+            "Synthetic Clay bar",
+            "Undercarriage Spray Clean",
             "Chemical Guys Jet Seal (1 Year Useful Life)",
             "Wheels dressed + ceramic spray",
-            "Plastic trim dressed" 
+            "Plastic trim dressed and Protected (With Ceramic Spray)",
+            "Windshield Ceramic Spray"
         ]
     }
 ];

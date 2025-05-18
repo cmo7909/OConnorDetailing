@@ -5,6 +5,7 @@ import Home from './Pages/Home';
 import Pricing from './Pages/Pricing';
 import Gallery from './Pages/Gallery';
 import Contact from './Pages/Contact';
+import ProjectDetail from './Pages/ProjectDetail';
 import './Components/theme.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/gallery/:id" element={<ProjectDetail />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       </div>
