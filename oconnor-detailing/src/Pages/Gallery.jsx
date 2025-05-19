@@ -4,12 +4,12 @@ import './Gallery.css';
 
 const projects = [
   {
-    id: 'Chicken Coop',
+    id: 'Chickencoop',
     year: 2013,
     make: 'Chevy',
     model: 'Cruise',
     codeName: 'Chicken Coop',
-    thumbnail: '/Gallery/Chickencoop/thumb.jpeg',
+    thumbnail: '/Gallery/Chickencoop/thumb.jpg',
   },
   {
     id: 'Fishtub',

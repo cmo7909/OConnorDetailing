@@ -4,16 +4,19 @@ import './ProjectDetail.css';
 
 // Static data for now — can be expanded
 const projectDetails = {
-  redrocket: {
+  Chickencoop: {
     title: 'ChickenCoop',
     images: [
       '/gallery/Chickencoop/1.jpg',
       '/gallery/Chickencoop/2.jpg',
       '/gallery/Chickencoop/3.jpg',
+      '/gallery/Chickencoop/4.jpg',
+      '/gallery/Chickencoop/5.jpg',
+      '/gallery/Chickencoop/6.jpg',
     ],
-    description: 'This 2016 Honda Civic Si came in after months of neglect... (Add more text here)',
+    description: 'This 2012 Chevy Cruise came in after months of neglect... (Add more text here)',
   },
-  blackbeauty: {
+  Fishtub: {
     title: 'Fishtub',
     images: [
       '/gallery/Fishtub/1.jpg',
