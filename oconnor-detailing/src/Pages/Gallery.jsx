@@ -15,7 +15,7 @@ const projects = [
     id: 'Fishtub',
     year: 2020,
     make: 'Jeep',
-    model: 'Gladiator',
+    model: 'Rubicon Gladiator',
     codeName: 'Fish Tub',
     thumbnail: '/Gallery/Fishtub/thumb.jpeg',
   },

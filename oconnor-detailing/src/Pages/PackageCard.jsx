@@ -1,26 +1,43 @@
 import React from "react";
+import "./PackageCard.css";
 
-const PackageCard = ({name, interiorPrice, exteriorPrice, interiorItems, exteriorItems}) => (
-    <div className = "package-card">
-        <h2>{name} Package:</h2>
+const backgrounds = {
+  silver: '#bae6fd',   // bright sky blue
+  gold: '#fde68a',     // warm yellow
+  platinum: '#ddd6fe', // soft lilac
+};
 
-        <div className = "section">
-            <h3>Interior: ${interiorPrice}</h3>
+const gradientOverlay = 'linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(0,0,0,0.05))';
 
-            <ul>
-                {interiorItems.map((item, i) => <li key={i}>{item}</li>)}
-            </ul>
-        </div>
+const PackageCard = ({ name, interiorPrice, exteriorPrice, interiorItems, exteriorItems, variant }) => {
+  const backgroundStyle = {
+    background: `${gradientOverlay}, ${backgrounds[variant?.toLowerCase()] || '#fff'}`,
+  };
 
-        <div className="section">
-            <h3>Exterior: ${exteriorPrice}</h3>
+  return (
+    <div className="package-card" style={backgroundStyle}>
+      <h2>{name} Package:</h2>
 
-            <ul>
-                {exteriorItems.map((item, i) => <li key={1}>{item}</li>)}
-            </ul>
-        </div>
+      <div className="section">
+        <h3>Interior: ${interiorPrice}</h3>
+        <ul>
+          {interiorItems.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="section">
+        <h3>Exterior: ${exteriorPrice}</h3>
+        <ul>
+          {exteriorItems.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
+        </ul>
+      </div>
     </div>
-);
-  
+  );
+};
 
 export default PackageCard;
+

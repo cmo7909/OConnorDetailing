@@ -5,6 +5,7 @@ import ExtrasSection from "./ExtraSection";
 const packages = [
     {
         name: 'Silver',
+        variant: 'silver',
         interiorPrice: 80,
         exteriorPrice: 100,
         interiorItems: [
@@ -24,6 +25,7 @@ const packages = [
     },
     {
         name: 'Gold',
+        variant: 'gold',
         interiorPrice: 100,
         exteriorPrice: 120,
         interiorItems: [
@@ -47,6 +49,7 @@ const packages = [
     },
     {
         name: 'Platinum',
+        variant: 'platinum',
         interiorPrice: 150,
         exteriorPrice: 150,
         interiorItems: [

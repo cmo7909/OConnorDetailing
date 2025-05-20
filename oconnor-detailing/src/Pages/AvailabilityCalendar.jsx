@@ -3,13 +3,11 @@ import './AvailabilityCalendar.css';
 
 // Format: 'YYYY-MM-DD'
 const unavailableDates = [
+  '2025-05-23',
+  '2025-05-24',
   '2025-05-25',
   '2025-05-26',
-  '2025-05-27',
-  '2025-05-28',
-  '2025-05-29',
-  '2025-05-30',
-  '2025-05-31',
+
 ];
 
 const AvailabilityCalendar = () => {
