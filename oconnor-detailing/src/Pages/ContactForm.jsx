@@ -58,6 +58,8 @@ const ContactForm = () => {
   return (
     <div className="contact-form-container">
       <h2>Send an Inquiry</h2>
+      <h3>** NOTE this section does not currently work, for now you can contact me via (585)545-9916, Thank You! **</h3>
+      <h3>I am working on a fix for this along with the gallery!</h3>
       <form onSubmit={handleSubmit}>
         <input type="text" name="name" placeholder="Your Name" required value={formData.name} onChange={handleChange} />
         <input type="email" name="email" placeholder="Your Email" required value={formData.email} onChange={handleChange} />
