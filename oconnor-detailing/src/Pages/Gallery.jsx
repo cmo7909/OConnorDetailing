@@ -8,7 +8,7 @@ const projects = [
     year: 2013,
     make: 'Chevy',
     model: 'Cruise',
-    codeName: 'Chicken Coop',
+    codeName: '"Chicken Coop"',
     thumbnail: '/imageGallery/Chickencoop/thumb.jpg',
   },
   {
@@ -16,7 +16,7 @@ const projects = [
     year: 2020,
     make: 'Jeep',
     model: 'Rubicon Gladiator',
-    codeName: 'Fish Tub',
+    codeName: '"Fish Tub"',
     thumbnail: '/imageGallery/Fishtub/thumb.jpeg',
   },
   // Add more as needed
