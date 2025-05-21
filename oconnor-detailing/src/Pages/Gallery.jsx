@@ -9,7 +9,7 @@ const projects = [
     make: 'Chevy',
     model: 'Cruise',
     codeName: 'Chicken Coop',
-    thumbnail: '/Gallery/Chickencoop/thumb.jpg',
+    thumbnail: '/imageGallery/Chickencoop/thumb.jpg',
   },
   {
     id: 'Fishtub',
@@ -17,7 +17,7 @@ const projects = [
     make: 'Jeep',
     model: 'Rubicon Gladiator',
     codeName: 'Fish Tub',
-    thumbnail: '/Gallery/Fishtub/thumb.jpeg',
+    thumbnail: '/imageGallery/Fishtub/thumb.jpeg',
   },
   // Add more as needed
 ];
