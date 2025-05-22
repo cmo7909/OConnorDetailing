@@ -1,6 +1,6 @@
 // api/send-email.js
 
-console.log('ENV CHECK:', process.env.EMAIL, process.env.EMAIL_PASSWORD, process.env.EMAIL_TO);
+console.log('ENV CHECK:', process.env.EMAIL, process.env.EMAIL_PASS, process.env.EMAIL_TO);
 
 const nodemailer = require('nodemailer');
 
