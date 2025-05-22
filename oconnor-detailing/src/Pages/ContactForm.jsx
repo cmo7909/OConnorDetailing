@@ -62,10 +62,10 @@ const ContactForm = () => {
         <input type="text" name="name" placeholder="Your Name" required value={formData.name} onChange={handleChange} />
         <input type="email" name="email" placeholder="Your Email" required value={formData.email} onChange={handleChange} />
         <input type="text" name="phone" placeholder="Phone Number" required value={formData.phone} onChange={handleChange} />
-        <input type="text" name="dates" placeholder="Preferred Date(s)" required value={formData.dates} onChange={handleChange} />
+        <input type="text" name="year" placeholder="Vehicle Year" required value={formData.year} onChange={handleChange} />
         <input type="text" name="make" placeholder="Vehicle Make" required value={formData.make} onChange={handleChange} />
         <input type="text" name="model" placeholder="Vehicle Model" required value={formData.model} onChange={handleChange} />
-        <input type="text" name="year" placeholder="Vehicle Year" required value={formData.year} onChange={handleChange} />
+        <input type="text" name="dates" placeholder="Preferred Date(s)" required value={formData.dates} onChange={handleChange} />
         <textarea name="inquiry" placeholder="Additional Notes or Questions" rows="3" value={formData.inquiry} onChange={handleChange} style={{resize: 'none', overflowY: 'auto', maxHeight: '150px',
   }}
 />

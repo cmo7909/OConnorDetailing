@@ -1,5 +1,6 @@
 .calendar-container {
-  max-width: 100%;
+  max-width: 1000px; 
+  margin: 0 auto;   
   width: 100%;
   overflow-x: auto;
   padding: 1rem;
@@ -10,7 +11,7 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 0.5rem;
-  min-width: 350px; 
+  min-width: 100%; 
 }
   
   .calendar-header {
@@ -45,3 +46,27 @@
     margin-top: 0.2rem;
   }
   
+  .calendar-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.calendar-header-bar h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.calendar-header-bar button {
+  background-color: #e2e8f0;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.calendar-header-bar button:hover {
+  background-color: #cbd5e1;
+}
