@@ -41,7 +41,7 @@ module.exports = async (req, res) => {
 
     return res.status(200).json({ message: 'Email sent successfully' });
   } catch (err) {
-    console.error('Email send error:', err);
+    console.error('Email send error:', err.message, err.response);
     return res.status(500).json({ message: 'Failed to send email' });
   }
 };
