@@ -1,5 +1,7 @@
 // api/send-email.js
 
+console.log('ENV CHECK:', process.env.EMAIL, process.env.EMAIL_PASSWORD, process.env.EMAIL_TO);
+
 const nodemailer = require('nodemailer');
 
 module.exports = async (req, res) => {
@@ -18,14 +20,14 @@ module.exports = async (req, res) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail', // Or your mail provider
     auth: {
-      user: process.env.EMAIL_USER,
+      user: process.env.EMAIL,
       pass: process.env.EMAIL_PASS,
     },
   });
 
   try {
     await transporter.sendMail({
-      from: `"Detailing Inquiry" <${process.env.EMAIL_USER}>`,
+      from: `"Detailing Inquiry" <${process.env.EMAIL}>`,
       to: process.env.EMAIL_TO,
       subject: `New Detailing Inquiry from ${name}`,
       html: `
