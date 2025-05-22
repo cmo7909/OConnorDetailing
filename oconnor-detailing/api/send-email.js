@@ -1,7 +1,5 @@
 // api/send-email.js
 
-console.log('ENV CHECK:', process.env.EMAIL, process.env.EMAIL_PASS, process.env.EMAIL_TO);
-
 const nodemailer = require('nodemailer');
 
 module.exports = async (req, res) => {
@@ -9,25 +7,29 @@ module.exports = async (req, res) => {
     return res.status(405).json({ message: 'Only POST requests allowed' });
   }
 
+  console.log('ENV CHECK:', {
+    EMAIL_USER: !!process.env.EMAIL_USER,
+    EMAIL_PASS: !!process.env.EMAIL_PASS,
+    EMAIL_TO: !!process.env.EMAIL_TO
+  });
+
   const { name, email, phone, dates, make, model, year, inquiry } = req.body;
 
-  // Validate required fields
   if (!name || !email || !phone || !dates || !make || !model || !year) {
     return res.status(400).json({ message: 'Missing required fields' });
   }
 
-  // Set up mail transport
   const transporter = nodemailer.createTransport({
-    service: 'gmail', // Or your mail provider
+    service: 'gmail',
     auth: {
-      user: process.env.EMAIL,
+      user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
     },
   });
 
   try {
     await transporter.sendMail({
-      from: `"Detailing Inquiry" <${process.env.EMAIL}>`,
+      from: `"Detailing Inquiry" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_TO,
       subject: `New Detailing Inquiry from ${name}`,
       html: `
