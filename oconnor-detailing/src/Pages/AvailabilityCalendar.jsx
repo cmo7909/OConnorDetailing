@@ -6,6 +6,9 @@ const unavailableDates = [
   '2025-05-24',
   '2025-05-25',
   '2025-05-26',
+  '2025-06-20',
+  '2025-06-21',
+  '2025-06-22'
 ];
 
 const AvailabilityCalendar = () => {

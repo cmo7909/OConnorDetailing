@@ -1,6 +1,7 @@
 import React from "react";
 import PackageCard from "./PackageCard";
 import ExtrasSection from "./ExtraSection";
+import "./Pricing.css";
 
 const packages = [
     {
@@ -76,7 +77,10 @@ const packages = [
 
 const Pricing = () => (
     <div className="pricing-page">
-        <h1>Detailing Packages</h1>
+        <div className="titles">
+            <h1>Detailing Packages</h1>
+            <h2>(price may vary based on the vehicles condition)</h2>
+        </div>
         <div className="package-list">
             {packages.map(pkg=> (
               <PackageCard key={pkg.name} {...pkg}></PackageCard>  
