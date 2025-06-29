@@ -8,9 +8,7 @@ const unavailableDates = [
   '2025-07-02',
   '2025-07-03',
   '2025-07-04',
-  '2025-07-05',
-  '2025-07-08',
-  
+  '2025-07-05', 
 ];
 
 const AvailabilityCalendar = ({ onDateSelect, pendingDates = [] }) => {
