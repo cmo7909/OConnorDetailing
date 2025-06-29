@@ -1,21 +1,48 @@
-import React from 'react';
-import './Contact.css';
-import ContactForm from './ContactForm';
+// ContactPage.jsx
+import React, { useState } from 'react';
 import AvailabilityCalendar from './AvailabilityCalendar';
+import ContactForm from './ContactForm';
+import './Contact.css';
 
 const Contact = () => {
+  const [requestedDate, setRequestedDate] = useState(null);
+  const [pendingDates, setPendingDates] = useState([]);
+
+  const handleDateSelect = dateString => {
+    if (window.confirm(`Request ${dateString}?`)) {
+      setRequestedDate(dateString);
+    }
+  };
+
+  const handleInquirySuccess = dateString => {
+    setPendingDates(d => [...d, dateString]);
+    setRequestedDate(null);
+  };
+
   return (
-    <div className="booking-page">
-      <h1>Book a Detail</h1>
-      <p>Please check the calendar below to see when we're available! (Avalibility may vary each "free" day)</p>
-      <AvailabilityCalendar />
-      <div className="contact-page">
-      <h1 style={{ textAlign: 'center' }}>Contact Us</h1>
-      <p style={{ textAlign: 'center' }}>
-        Please check our calendar above for availability, then fill out the form below to request a detail.
-      </p>
-      <ContactForm />
-    </div>
+    <div className="contact-page">
+      <h1>Book Your Detail</h1>
+      <p>Click a green date to request it.</p>
+      <AvailabilityCalendar
+       onDateSelect={handleDateSelect}
+       pendingDates={pendingDates}
+     />
+
+
+      {requestedDate && (
+        <ContactForm
+          initialDate={requestedDate}
+          onClose={() => setRequestedDate(null)}
+        />
+      )}
+
+      {requestedDate && (
+       <ContactForm
+         initialDate={requestedDate}
+         onClose={() => setRequestedDate(null)}
+         onSuccess={handleInquirySuccess}
+       />
+     )}
     </div>
   );
 };
