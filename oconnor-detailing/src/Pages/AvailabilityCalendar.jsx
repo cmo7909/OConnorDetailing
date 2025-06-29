@@ -83,7 +83,7 @@ const AvailabilityCalendar = ({ onDateSelect, pendingDates = [] }) => {
           <span className="legend-color unavailable" /> Booked
         </div>
         <div className="legend-item">
-          <span className="legend-color past" /> Past Date
+          <span className="legend-color past" /> Past Date / Busy
         </div>
       </div>
     </div>

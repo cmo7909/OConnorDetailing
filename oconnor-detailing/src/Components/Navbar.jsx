@@ -17,7 +17,7 @@ const Navbar = () => {
 return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <Link to="/">O'Connor Detailing</Link>
+        <Link to="/">O'Connor Auto Detailing</Link>
       </div>
 
       <div
