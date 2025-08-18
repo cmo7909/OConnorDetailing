@@ -116,3 +116,32 @@
   background-color: #e5e7eb;  /* gray for past */
 }
 
+
+.calendar-cell.booked {
+  background-color: #4b5563; /* Tailwind slate-600-ish */
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.calendar-legend .legend-color.booked {
+  background-color: #4b5563;
+}
+
+/* existing … */
+
+.calendar-cell.booked {
+  background-color: #6b7280; /* Tailwind gray-500ish */
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.calendar-cell.booked {
+  background-color: #6b7280; /* dark gray */
+  color: #fff;
+  font-weight: 600;
+}
+
+.legend-color.booked {
+  background-color: #6b7280;
+}
+
