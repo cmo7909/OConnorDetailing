@@ -9,35 +9,31 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "@upstash/redis": "^1.35.3",
-    "nodemailer": "^6.9.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.0",
+    "@upstash/redis": "1.35.3",
+    "nodemailer": "6.9.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-router-dom": "6.22.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^5.1.0",
-    "webpack-sources": "3.2.1"
+    "redis": "5.8.1",
+    "web-vitals": "5.1.0"
+  },
+  "devDependencies": {
+    "vercel": "46.0.1"
   },
   "overrides": {
-    "webpack-sources": "3.2.1"
+    "webpack": "5.64.4",
+    "webpack-sources": "3.2.0",
+    "enhanced-resolve": "5.8.3",
+    "webpack-manifest-plugin": "4.0.2"
   },
   "engines": {
     "node": "18.x"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "vercel": "^46.0.1"
+    "production": [">0.2%","not dead","not op_mini all"],
+    "development": ["last 1 chrome version","last 1 firefox version","last 1 safari version"]
   }
 }
+
 
