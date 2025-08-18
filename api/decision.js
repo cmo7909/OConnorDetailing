@@ -1,36 +1,51 @@
-// Admin “approve/deny” a pending date.
-// Approve: moves date from pending to booked.
-// Deny: removes date from pending.
+// api/decision.js
 const redis = require('./_redis');
+
+const ADMIN_KEY = process.env.ADMIN_KEY || process.env.VITE_ADMIN_KEY || process.env.REACT_APP_ADMIN_KEY;
 
 module.exports = async (req, res) => {
   if (req.method !== 'POST') return res.status(405).json({ message: 'Only POST' });
 
-  try {
-    const adminKey = req.headers['x-admin-key'];
-    if (!adminKey || adminKey !== process.env.ADMIN_KEY) {
-      return res.status(401).json({ message: 'unauthorized' });
-    }
+  // simple auth
+  const key = req.headers['x-admin-key'];
+  if (!ADMIN_KEY || key !== ADMIN_KEY) return res.status(401).json({ message: 'Unauthorized' });
 
+  try {
     const { date, action } = req.body || {};
     if (!date || !/^\d{4}-\d{2}-\d{2}$/.test(date)) {
       return res.status(400).json({ message: 'Valid date (YYYY-MM-DD) required' });
     }
-    if (!['approve', 'deny'].includes(action)) {
-      return res.status(400).json({ message: 'action must be approve|deny' });
-    }
+    if (!action) return res.status(400).json({ message: 'action required' });
 
     const month = date.slice(0, 7);
     const pendingKey = `pending:${month}`;
-    const bookedKey = `booked:${month}`;
+    const bookedKey  = `booked:${month}`;
 
-    if (action === 'approve') {
-      await Promise.all([
-        redis.srem(pendingKey, date),
-        redis.sadd(bookedKey, date),
-      ]);
-    } else {
-      await redis.srem(pendingKey, date);
+    switch (action) {
+      case 'approve': {
+        // move pending -> booked
+        await redis.srem(pendingKey, date);
+        await redis.sadd(bookedKey, date);
+        break;
+      }
+      case 'deny': {
+        // remove from pending
+        await redis.srem(pendingKey, date);
+        break;
+      }
+      case 'block': {
+        // force add to booked, remove from pending if there
+        await redis.srem(pendingKey, date);
+        await redis.sadd(bookedKey, date);
+        break;
+      }
+      case 'unblock': {
+        // remove from booked
+        await redis.srem(bookedKey, date);
+        break;
+      }
+      default:
+        return res.status(400).json({ message: 'Unknown action' });
     }
 
     return res.status(200).json({ ok: true });
@@ -39,4 +54,3 @@ module.exports = async (req, res) => {
     return res.status(500).json({ message: 'server error' });
   }
 };
-
