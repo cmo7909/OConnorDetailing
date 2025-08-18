@@ -28,6 +28,16 @@
     ]
   },
   "devDependencies": {
+    "patch-package": "^8.0.0",
+    "postinstall-postinstall": "^2.1.0",
     "vercel": "^46.0.1"
+  },
+  "name": "oconnor-detailing",
+  "...": "...",
+  "engines": {
+    "node": "18.x"
+  },
+  "overrides": {
+    "webpack-sources": "3.2.1"
   }
 }
