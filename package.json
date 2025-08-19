@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@upstash/redis": "^1.35.3",
+    "fs-extra": "9.1.0",
     "nodemailer": "^6.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -18,12 +19,19 @@
     "web-vitals": "^5.1.0"
   },
   "devDependencies": {},
-  "browserslist": {
-    "production": [">0.2%","not dead","not op_mini all"],
-    "development": ["last 1 chrome version","last 1 firefox version","last 1 safari version"]
+  "overrides": {
+    "enhanced-resolve": "5.15.0",
+    "webpack-sources": "3.2.3"
   },
-  "engines": { "node": "20.x", "npm": "10.x" }
+  "engines": {
+    "node": "20.x"
+  },
+  "browserslist": {
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
+  }
 }
+
 
 
 
