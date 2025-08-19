@@ -1,44 +1,40 @@
 {
   "name": "oconnor-detailing",
   "private": true,
-  "version": "0.1.0",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "SKIP_PREFLIGHT_CHECK=true react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "clean-install": "rm -rf node_modules package-lock.json && npm install"
   },
   "dependencies": {
     "@upstash/redis": "^1.35.3",
-    "fs-extra": "9.1.0",
     "nodemailer": "^6.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^5.1.0",
-
-    "webpack-sources": "3.2.3",
-    "enhanced-resolve": "5.15.0"
+    "redis": "^5.8.1",
+    "web-vitals": "^5.1.0"
+  },
+  "devDependencies": {
+    "vercel": "^46.0.2"
+  },
+  "browserslist": {
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
+  },
+  "engines": {
+    "node": "20.x",
+    "npm": ">=10"
   },
   "overrides": {
     "webpack-sources": "3.2.3",
-    "enhanced-resolve": "5.15.0"
-  },
-  "engines": {
-    "node": "20.x"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "enhanced-resolve": "5.12.0",
+    "fs-extra": "10.1.0",
+    "graceful-fs": "4.2.11"
   }
 }
+
 
