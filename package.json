@@ -5,11 +5,13 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll=false",
+    "vercel-build": "node -e \"console.log('fs-extra:', require('fs-extra/package.json').version); console.log('webpack-sources:', require('webpack-sources/package.json').version)\" && react-scripts build",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "dependencies": {
     "@upstash/redis": "^1.35.3",
+    "fs-extra": "9.1.0",
     "nodemailer": "^6.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -17,18 +19,16 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^5.1.0"
   },
-  "devDependencies": {
-    "vercel": "^46.0.2"
+  "overrides": {
+    "webpack-sources": "3.2.3",
+    "fs-extra": "9.1.0"
   },
   "engines": {
     "node": "20.x",
     "npm": ">=10"
-  },
-  "overrides": {
-    "webpack-sources": "3.2.3",
-    "fs-extra": "9.1.0"
   }
 }
+
 
 
 
