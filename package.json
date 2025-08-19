@@ -2,9 +2,8 @@
   "name": "oconnor-detailing",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "20.x"
-  },
+  "engines": { "node": "20.x" },
+  "packageManager": "npm@10.9.0",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -13,7 +12,7 @@
   },
   "dependencies": {
     "@upstash/redis": "^1.35.3",
-    "fs-extra": "10.1.0",
+    "fs-extra": "9.1.0",
     "nodemailer": "^6.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -25,22 +24,15 @@
     "vercel": "^46.0.2"
   },
   "overrides": {
-    "webpack-sources": "3.2.3",
-    "fs-extra": "10.1.0"
+    "fs-extra": "9.1.0",
+    "webpack-sources": "3.2.3"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
   }
 }
+
 
 
 
