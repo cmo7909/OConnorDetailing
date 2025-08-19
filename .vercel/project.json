@@ -1,0 +1,9 @@
+{
+  "projectId": "prj_itD0kxvsLunIRdkyKplWtlYyyQ4o",
+  "orgId": "team_P8wY21Hr5rSMPe3zqh7lL5Uv",
+  "projectName": "o-connor-detailing",
+  "installCommand": "npm install",
+  "buildCommand": "npm run vercel-build"
+}
+
+
