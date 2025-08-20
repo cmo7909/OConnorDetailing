@@ -6,7 +6,6 @@
 
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "vercel-build": "node ./scripts/check-deps.js && npm run build",
     "postinstall": "node ./scripts/check-deps.js",
     "test": "react-scripts test",
