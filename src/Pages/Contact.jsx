@@ -6,7 +6,7 @@ import './Contact.css';
 
 const ContactPage = () => {
 
-    // Overlay content (card in front of the calendar)
+    // Overlay content (card in front of the calendar) (redeploy plz)
   const seasonClosed = {
     active: true,
     title: "Closed for the Season",
