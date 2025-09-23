@@ -24,10 +24,6 @@
   "devDependencies": {
     "vercel": "^46.0.2"
   },
-  "overrides": {
-    "fs-extra": "9.1.0",
-    "webpack-sources": "3.2.3"
-  },
   "browserslist": {
     "production": [
       ">0.2%",
