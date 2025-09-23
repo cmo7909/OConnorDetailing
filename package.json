@@ -1,9 +1,5 @@
 {
-  "name": "oconnor-detailing",
-  "version": "0.1.0",
-  "private": true,
   "engines": { "node": "20.x" },
-
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -11,7 +7,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-
   "dependencies": {
     "@upstash/redis": "^1.35.3",
     "nodemailer": "^6.9.0",
@@ -19,15 +14,15 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.0",
     "react-scripts": "5.0.1",
-    "web-vitals": "^5.1.0"
+    "web-vitals": "^5.1.0",
+    "enhanced-resolve": "5.15.0",
+    "webpack-sources": "3.2.3"
   },
-
   "devDependencies": {
     "vercel": "^48.1.1"
   },
-
   "overrides": {
-    "webpack-sources": "3.2.3",
-    "enhanced-resolve": "5.15.0"
+    "enhanced-resolve": "5.15.0",
+    "webpack-sources": "3.2.3"
   }
 }
