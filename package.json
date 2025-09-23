@@ -8,7 +8,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "vercel-build": "npm run build",
+    "vercel-build": "node scripts/patch-fs-extra.js && npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
