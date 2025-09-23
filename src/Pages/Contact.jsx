@@ -5,6 +5,18 @@ import ContactForm from './ContactForm';
 import './Contact.css';
 
 const ContactPage = () => {
+
+    // Overlay content (card in front of the calendar)
+  const seasonClosed = {
+    active: true,
+    title: "Closed for the Season",
+    overlayMessage:
+      "I’m back to school full-time therefore detailing is paused. Thanks for your support—see you next season!"
+  };
+  // Yellow banner message (set to null to hide)
+  const bannerText = null; // e.g., "Closed for winter. Gift cards still available via email."
+
+
   const [confirmDate, setConfirmDate] = useState(null);     // date user clicked (awaiting confirm)
   const [requestedDate, setRequestedDate] = useState(null); // date being used in the form modal
   const [pendingDates, setPendingDates] = useState([]);     // optimistic local list (merged in calendar)
@@ -35,12 +47,23 @@ const ContactPage = () => {
 
   return (
     <div className="contact-page">
+      {/* <h1>Book Your Detail</h1>
+      <p>Click an available date to request it.</p> */}
+
       <h1>Book Your Detail</h1>
-      <p>Click an available date to request it.</p>
+      {!seasonClosed.active ? (
+        <p>Click an available date to request it.</p>
+      ) : (
+        <div className="season-banner" role="status" aria-live="polite">
+          <strong>Closed for the season.</strong> {seasonClosed.message}
+          {seasonClosed.reopenDate ? <> Reopening: {seasonClosed.reopenDate}</> : null}
+        </div>
+      )}
 
       <AvailabilityCalendar
         onDateSelect={handleDateSelect}
         pendingDates={pendingDates} // component fetches server data and merges with this
+        forceClosed={seasonClosed}
       />
 
       {/* —— Confirm Dialog —— */}

@@ -99,6 +99,34 @@
   display: inline-block;
 }
 
+/* lock/blur state */
+.calendar-container.calendar-closed .calendar-grid,
+.calendar-container.calendar-closed .calendar-legend,
+.calendar-container.calendar-closed .calendar-header-bar {
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.calendar-closed-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none; /* overlay itself ignores clicks */
+}
+
+.calendar-closed-card {
+  pointer-events: auto; /* allow text selection if needed */
+  background: rgba(255,255,255,0.95);
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px 20px;
+  text-align: center;
+  max-width: 480px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+
 /* match your cell colors */
 .legend-color.available {
   background-color: #d1fae5;  /* green for available */

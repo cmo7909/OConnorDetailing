@@ -9,7 +9,8 @@ const toLocalYMD = (d) => {
   return `${y}-${m}-${day}`;
 };
 
-const AvailabilityCalendar = ({ onDateSelect, pendingDates = [] }) => {
+// const AvailabilityCalendar = ({ onDateSelect, pendingDates = [] }) => {
+  const AvailabilityCalendar = ({ onDateSelect, pendingDates = [], forceClosed = null }) => {
   const today = new Date();
   const [viewDate, setViewDate] = useState(new Date(today.getFullYear(), today.getMonth(), 1));
 
@@ -17,6 +18,7 @@ const AvailabilityCalendar = ({ onDateSelect, pendingDates = [] }) => {
   const [serverBooked,  setServerBooked]  = useState([]); // approved
   const [serverBusy,    setServerBusy]    = useState([]); // blocked
   const [loading, setLoading] = useState(false);
+  const [serverClosed,  setServerClosed]  = useState(null); // {active, message, reopenDate}
 
   const year = viewDate.getFullYear();
   const month = viewDate.getMonth();
@@ -43,6 +45,7 @@ const AvailabilityCalendar = ({ onDateSelect, pendingDates = [] }) => {
           setServerPending(data?.pending || []);
           setServerBooked(data?.booked  || []);
           setServerBusy(data?.busy      || []);
+          setServerClosed(data?.closed  || null);
         }
       } catch (e) {
         console.error('calendar-status fetch failed', e);
@@ -50,6 +53,7 @@ const AvailabilityCalendar = ({ onDateSelect, pendingDates = [] }) => {
           setServerPending([]);
           setServerBooked([]);
           setServerBusy([]);
+          setServerClosed(null);
         }
       } finally {
         if (!ignore) setLoading(false);
@@ -80,8 +84,12 @@ const AvailabilityCalendar = ({ onDateSelect, pendingDates = [] }) => {
     return Array.from(set);
   }, [serverPending, pendingDates]);
 
+  const closed = forceClosed ?? serverClosed; // prefer prop override if provided
+  const isClosed = Boolean(closed?.active);
+
   return (
-    <div className="calendar-container">
+    // <div className="calendar-container">
+    <div className={`calendar-container ${isClosed ? 'calendar-closed' : ''}`}>
       <div className="calendar-header-bar">
         <button onClick={() => handleMonthChange(-1)} disabled={month === today.getMonth()}>&lt;</button>
         <h2>{viewDate.toLocaleString('default', { month: 'long' })} {year}</h2>
@@ -105,18 +113,26 @@ const AvailabilityCalendar = ({ onDateSelect, pendingDates = [] }) => {
             date.getMonth() === today.getMonth() &&
             date.getFullYear() === today.getFullYear();
 
-          const isPending = allPending.includes(dateString);
-          const isBooked  = serverBooked.includes(dateString); // approved (dark gray)
-          const isBusy    = serverBusy.includes(dateString);   // blocked (red)
+          // const isPending = allPending.includes(dateString);
+          // const isBooked  = serverBooked.includes(dateString); // approved (dark gray)
+          // const isBusy    = serverBusy.includes(dateString);   // blocked (red)
 
-          const state = isPast
+          const isPending = !isClosed && allPending.includes(dateString);
+          const isBooked  = !isClosed && serverBooked.includes(dateString);
+          const isBusy    = !isClosed && serverBusy.includes(dateString);
+
+          // const state = isPast
+          const state = isClosed
+            ? 'unavailable'
+            : isPast
             ? 'past'
             : isPending ? 'pending'
             : isBusy    ? 'unavailable'
             : isBooked  ? 'booked'
             : 'available';
 
-          const clickable = state === 'available';
+          // const clickable = state === 'available';
+          const clickable = !isClosed && state === 'available';
 
           return (
             <div
@@ -142,6 +158,16 @@ const AvailabilityCalendar = ({ onDateSelect, pendingDates = [] }) => {
         <div className="legend-item"><span className="legend-color unavailable" /> Busy (Blocked)</div>
         <div className="legend-item"><span className="legend-color past" /> Past Date</div>
       </div>
+         {isClosed && (
+        <div className="calendar-closed-overlay" role="status" aria-live="polite">
+          <div className="calendar-closed-card">
+            <h3>{closed?.title ?? 'Closed for the Season'}</h3>
+            {closed?.overlayMessage
+              ? <p>{closed.overlayMessage}</p>
+              : (closed?.message ? <p>{closed.message}</p> : null)}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
